@@ -119,7 +119,7 @@ def compute_gradients(
         )
         # torch.unbind(forward_out) is a list of scalar tensor tuples and
         # contains batch_size * #steps elements
-
+        torch.set_grad_enabled(True)
         grads = torch.autograd.grad(torch.unbind(
             outputs), inputs, allow_unused=True)
     return grads
