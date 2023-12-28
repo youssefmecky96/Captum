@@ -1,4 +1,4 @@
-#changes to captum package 
+### changes to captum package 
 file:attr/_core/integrated_gradients.py  line 360
 reason: input from pytorch forecasting such as group id has no bearing on output and had to account for cases when gradient was none 
 change:scaled_grads = [
@@ -39,9 +39,7 @@ change: ablated_tensor = (
 file: attr/_core/feature_ablation.py line line 413
 reason: moving tensors to GPU 
 change:  total_attrib[i] += (eval_diff * current_mask.to(attrib_type).to(eval_diff.device)).sum(
-file: _utils/gradient.py line 122
-reason:force gradient computation even when model is in eval mode
-change: torch.set_grad_enabled(True)
+
         
 
 
